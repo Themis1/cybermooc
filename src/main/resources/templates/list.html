@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>        
+        <title>Participants</title>
+    </head>
+
+    <body>
+
+        <h1>Participants</h1>
+        <table>
+            <tr th:each="person: ${persons}">                
+                <td class="nr"></td>
+                <td><span th:text="${person.name}">name</span></td>
+                <td><span th:text="${person.address}">address</span></td>                                                                
+            </tr>
+        </table>
+        
+    </body>
+</html>

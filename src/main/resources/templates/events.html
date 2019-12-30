@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head lang="en">
+        <meta charset="UTF-8" />
+        <title>Events</title>
+    </head>
+    <body>
+
+        <h2>Events</h2>
+
+        <ol>
+            <li th:each="event : ${events}">
+                <span th:text="${event.eventname}">Event</span>
+                <span th:text="${event.eventdate}">Event</span>
+                <a th:href="@{/events/{id}(id=${event.id})}">Show the event</a>
+            </li>
+        </ol>
+
+        <h3>Add a new event</h3>
+        
+        <form method="POST" th:action="@{/events}">
+            <input type="text" name="eventname"/>
+            <input type="date" name="eventdate"/>
+            <input type="submit" value="Add a new event!"/>
+        </form>
+    </body>
+</html>
